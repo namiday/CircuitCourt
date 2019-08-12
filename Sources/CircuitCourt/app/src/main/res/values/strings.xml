@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">CircuitCourt</string>
+    <string name="defaultText">Lorem Ipsum</string>
+    <string name="title_activity_maps">Carte</string>
+    <string name="btnGoToMaps">Recherche</string>
+    <string name="errorLocation">Impossible d\'accèder à votre position</string>
+    <string name="currentLocation">Position actuelle</string>
+    <string name="distanceShop">A %1$skm d\'ici</string>
+    <string name="productPrice">%1$s€</string>
+    <string name="shopsNearby">producteurs à proximité</string>
+    <string name="info">Informations</string>
+    <string name="productsProposed">Produits proposés</string>
+    <string name="manageShop">Gérer le magasin</string>
+    <string name="createShop">Devenir producteur</string>
+    <string name="manageProducts">Gérer les produits</string>
+    <string name="name">Nom</string>
+
+    <string name="mailObject">[CircuitCourt] Je suis intéressé(e) par vos articles</string>
+    <string name="mailContent">Bonjour,\n\n Je suis intéressé(e) par vos articles.\nEst-il possible de planifier un rendez-vous ?\n\nCordialement,\n </string>
+    <string name="sendAppChoice">Veuillez choisir une application</string>
+    <string name="sendMailBtn">Contacter</string>
+    <string name="titleContactContextMenu">Contacter %1$s</string>
+    <string name="byPhone">Par téléphone</string>
+    <string name="byMail">Par mail</string>
+
+    <string name="email">Adresse mail</string>
+    <string name="password">Mot de passe</string>
+    <string name="checkboxRememberMe">Se souvenir de moi</string>
+    <string name="connection">Connexion</string>
+    <string name="createAccount">Créer un compte</string>
+    <string name="errorConnectionEmail">Aucun compte associé au mail renseigné</string>
+    <string name="errorConnectionPassword">Mot de passe incorrect</string>
+
+    <string name="logout">Se déconnecter</string>
+    <string name="editProfile">Modifier le profil</string>
+
+    <string name="titleUpdate">Mise à jour du profil</string>
+    <string name="titleCreate">Nouveau profil</string>
+    <string name="firstName">Prénom</string>
+    <string name="nickName">Pseudo</string>
+    <string name="changePassword">Modifier le mot de passe ?</string>
+    <string name="currentPassword">Mot de passe actuel</string>
+    <string name="newPassword">Nouveau mot de passe</string>
+    <string name="confirmNewPassword">Confirmation du mot de passe</string>
+    <string name="update">Mettre à jour</string>
+    <string name="create">Créer</string>
+    <string name="emailAlreadyExists">Cette adresse mail est déjà utilisée</string>
+    <string name="passwordsNotSame">Les mots de passe ne correspondent pas</string>
+    <string name="userCreated">Utilisateur créé avec succès</string>
+    <string name="userUpdated">Utilisateur modifié avec succès</string>
+
+    <string name="titleShopUpdate">Mise à jour du magasin</string>
+    <string name="titleShopCreate">Nouveau magasin</string>
+    <string name="shopCity">Ville</string>
+    <string name="shopStreet">Adresse</string>
+    <string name="shopPostalCode">Code postal</string>
+    <string name="shopKind">Type</string>
+    <string name="shopDescription">Description</string>
+    <string name="contacts">Mail de contact</string>
+    <string name="phone">Téléphone</string>
+    <string name="emptyFields">Les champs ne doivent pas être vides</string>
+
+    <string name="productsManagement">Gestion des produits</string>
+    <string name="productDeleted">Produit supprimé avec succès</string>
+    <string name="productAdded">Produit ajouté avec succès</string>
+    <string name="newProduct">Ajouter un produit</string>
+    <string name="updateProduct">Mettre à jour un produit</string>
+    <string name="price">Prix</string>
+    <string name="tags">Tags</string>
+    <string name="add">Ajouter</string>
+    <string name="legume">Légume</string>
+    <string name="fruit">Fruit</string>
+    <string name="viande">Viande</string>
+    <string name="autre">Autre</string>
+
+</resources>

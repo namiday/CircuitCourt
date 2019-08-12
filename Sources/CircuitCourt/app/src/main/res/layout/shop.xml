@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/shopView"
+        android:clickable="true"
+        android:focusable="true"
+        android:tag="null"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        app:layout_constrainedWidth="true"
+        app:layout_constrainedHeight="false"
+        android:background="@color/lightGrey"
+        android:layout_margin="5dp"
+        android:layout_marginBottom="3dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/shopName"
+                android:text="@string/defaultText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/lightGrey"
+                android:textStyle="bold"
+                android:fontFamily="@font/century_gothic" />
+
+            <TextView
+                android:id="@+id/shopAddress"
+                android:text="@string/defaultText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/lightGrey"
+                android:fontFamily="@font/century_gothic" />
+
+            <TextView
+                android:id="@+id/shopCity"
+                android:text="@string/defaultText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/lightGrey"
+                android:fontFamily="@font/century_gothic" />
+
+            <TextView
+                android:id="@+id/distance"
+                android:text="@string/defaultText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/lightGrey"
+                android:fontFamily="@font/century_gothic" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_alignParentEnd="true"
+            android:background="@android:color/transparent"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btnInfo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/info"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/info"/>
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

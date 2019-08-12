@@ -1,0 +1,144 @@
+﻿unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, IdAuthentication,
+  IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient, IdHTTP, Vcl.Grids,
+  Vcl.ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    ShowTable: TButton;
+    IdHTTP1: TIdHTTP;
+    Edit1: TEdit;
+    ComboBox1: TComboBox;
+    lbltitre: TLabel;
+    tableauDonnees: TStringGrid;
+    Label1: TLabel;
+    Panel1: TPanel;
+    procedure ShowTableClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    stringUsers, stringProducts : string;
+    Function splitdatatable(data:string):TStringList;
+    { Déclarations privées }
+  public
+    { Déclarations publiques }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+
+procedure TForm1.FormCreate(Sender: TObject);
+var
+  ListHeader : TStringList;
+  i: Integer;
+begin
+  ComboBox1.Items.Add('Users');
+  ComboBox1.Items.Add('Products');
+  stringUsers := '_id,mail,password,firstName,lastName,nickName,isSeller,shopName,shopCity,shopStreet,shopNum,shopPostalCode,shopkind,shopTags,contacts,shopLongitude,shopLatitude,__v';
+  stringProducts :='shopId,name,price,tags,type,__v';
+end;
+//------------------------------------------------------------------------------
+procedure TForm1.ShowTableClick(Sender: TObject);
+var
+  lHTTP: TIdHTTP;
+  ListHeader : tstringlist;
+  Result : string;
+  i : Integer;
+begin
+  ListHeader := TStringList.Create;
+  lHTTP := TIdHTTP.Create;
+  try
+    if ComboBox1.Text = 'Users' then
+    begin
+      // définition du header
+      ListHeader.CommaText := stringUsers;
+      for i := 0 to ListHeader.Count-1 do
+        tableauDonnees.Cols[i+1].Add(ListHeader[i]);
+      //récupération des données
+      Result := lHTTP.Get('http://ec2-34-247-50-129.eu-west-1.compute.amazonaws.com/getUsers');
+    end
+    else if ComboBox1.Text = 'Products' then
+    begin
+      // définition du header
+      ListHeader.CommaText := stringProducts;
+      for i := 0 to ListHeader.Count-1 do
+        tableauDonnees.Cols[i+1].Add(ListHeader[i]);
+      //récupération des données
+       Result := lHTTP.Get('http://ec2-34-247-50-129.eu-west-1.compute.amazonaws.com/getProducts');
+       splitdatatable(Result);
+    end;
+  finally
+    lHTTP.Free;
+    ListHeader.Free;
+  end;
+end;
+//------------------------------------------------------------------------------
+// Create
+
+// read
+//------------------------------------------------------------------------------
+Function TForm1.splitdatatable(data:string):TStringList;
+var
+  ListTemp,ListDecoupage:TStringList;
+  i,j : Integer;
+  Lignedonnees,lignedecoupage : string;
+begin
+  ListTemp := TStringList.Create;
+  ListDecoupage := TStringList.Create;
+  i := 1;
+  // découpage de la ligne réceptionnée
+  while data[i]<>']' do
+  begin
+    if data[i]='}' then
+    begin
+      Lignedonnees := Lignedonnees + data[i];
+      ListTemp.add(lignedonnees);
+      Lignedonnees := '';
+    end
+    else
+      Lignedonnees := Lignedonnees + data[i];
+    i := i+1;
+  end;
+
+  // découpage des données dans chaque ligne
+  for i := 0 to Listtemp.Count-1 do
+  begin
+    ListTemp[i] :=  stringreplace(ListTemp[i], ',"', '|',[rfReplaceAll, rfIgnoreCase]);
+    ListTemp[i] :=  stringreplace(ListTemp[i], ',', '?',[rfReplaceAll, rfIgnoreCase]);
+    ListDecoupage.StrictDelimiter := true;
+    ListDecoupage.Delimiter := '|';
+    ListDecoupage.CommaText := ListTemp[i];
+    // ajout dans le tableau
+    for j := 0 to ListDecoupage.Count-1 do
+    begin
+      ListDecoupage[j] :=  stringreplace(ListDecoupage[j], '?', ', ',[rfReplaceAll, rfIgnoreCase]);
+      tableauDonnees.Cells[i,j] := copy(Listdecoupage[j],pos(':',Listdecoupage[j]),Length(Listdecoupage[j]));
+    end;
+
+  end;
+
+  // Ajout dans le tableau
+
+  // libération
+  ListDecoupage.Free;
+  ListTemp.Free;
+end;
+
+//------------------------------------------------------------------------------
+// update
+
+// delete
+
+
+
+
+end.

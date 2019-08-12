@@ -1,0 +1,98 @@
+unit DeleteUser;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,IdHTTP, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TDeleteUserForm = class(TForm)
+    lblTitreDeleteUser: TLabel;
+    PanelBas: TPanel;
+    Button1: TButton;
+    PanelGauche: TPanel;
+    Panel6: TPanel;
+    lblchoixId: TLabel;
+    cbIdUser: TComboBox;
+    procedure FormCreate(Sender: TObject);
+    procedure getIdsUsers(data :string);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Déclarations privées }
+  public
+    { Déclarations publiques }
+  end;
+
+var
+  DeleteUserForm: TDeleteUserForm;
+
+implementation
+
+{$R *.dfm}
+
+procedure TDeleteUserForm.Button1Click(Sender: TObject);
+
+var
+ lHTTP: TIdHTTP;
+ chaine,res : string;
+begin
+  lHTTP := TIdHTTP.Create;
+  try
+    chaine := 'http://ec2-34-247-50-129.eu-west-1.compute.amazonaws.com/deleteUser/5560715';
+    res := lHTTP.Get(chaine);
+    ShowMessage(res);
+  finally
+    lHTTP.Free;
+  end;
+end;
+//------------------------------------------------------------------------------
+procedure TDeleteUserForm.FormCreate(Sender: TObject);
+var
+  lhttp : TIdHTTP;
+  result : Tstringlist;
+  i : Integer;
+begin
+  lHTTP := TIdHTTP.Create;
+  result := TStringList.Create;
+  try
+
+  // lancer une fonction récupérant les identifiants des utilisateurs et les mettre dans la combobox
+//    result := lHTTP.Get('http://ec2-34-247-50-129.eu-west-1.compute.amazonaws.com/getIdsUsers');
+//
+//    for i := 0 to result.Count-1 do
+//      cbIdUser.Items.Add(result[i]);
+  finally
+    result.Free;
+    lhttp.Free;
+  end;
+end;
+//------------------------------------------------------------------------------
+procedure TDeleteUserForm.getIdsUsers(data :string);
+var
+  listTemp : Tstringlist;
+  lignedonnees : string;
+  i : Integer;
+begin
+  listTemp := TStringList.Create;
+    // découpage de la ligne réceptionnée
+  while data[i]<>']' do
+  begin
+    if data[i]='}' then
+    begin
+      Lignedonnees := Lignedonnees + data[i];
+      ListTemp.add(lignedonnees);
+      Lignedonnees := '';
+    end
+    else
+      Lignedonnees := Lignedonnees + data[i];
+    i := i+1;
+  end;
+
+  for I := 0 to ListTemp.Count-1 do
+  begin
+    cbidUser.Items.add(copy(ListTemp[i],pos('"_id":',ListTemp[i])+6,pos(',',ListTemp[i])));
+  end;
+  listTemp.Free;
+end;
+end.

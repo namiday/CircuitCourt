@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightGrey"
+    tools:context=".EditShop">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textColor="@color/green"
+            android:textStyle="bold"
+            android:fontFamily="@font/century_gothic" />
+
+        <EditText
+            android:id="@+id/shopName"
+
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:gravity="center"
+
+            android:fontFamily="@font/century_gothic"
+            android:hint="@string/name"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/green"
+            android:textColorHint="@color/darkGrey"
+            android:background="@drawable/edittext"
+            />
+
+        <EditText
+            android:id="@+id/shopCity"
+
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:gravity="center"
+
+            android:hint="@string/shopCity"
+            android:fontFamily="@font/century_gothic"
+            android:textColor="@color/green"
+            android:textColorHint="@color/darkGrey"
+            android:background="@drawable/edittext"
+            />
+
+        <EditText
+            android:id="@+id/shopStreet"
+
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:gravity="center"
+
+            android:hint="@string/shopStreet"
+            android:fontFamily="@font/century_gothic"
+            android:textColor="@color/green"
+            android:textColorHint="@color/darkGrey"
+            android:background="@drawable/edittext"
+            />
+
+        <EditText
+            android:id="@+id/shopPostalCode"
+
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:gravity="center"
+
+            android:hint="@string/shopPostalCode"
+            android:fontFamily="@font/century_gothic"
+            android:textColor="@color/green"
+            android:textColorHint="@color/darkGrey"
+            android:background="@drawable/edittext"
+            />
+
+        <EditText
+            android:id="@+id/shopKind"
+
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:gravity="center"
+
+            android:hint="@string/shopKind"
+            android:fontFamily="@font/century_gothic"
+            android:textColor="@color/green"
+            android:textColorHint="@color/darkGrey"
+            android:background="@drawable/edittext"
+            />
+
+        <EditText
+            android:id="@+id/shopDescription"
+
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:gravity="center"
+
+            android:hint="@string/shopDescription"
+            android:fontFamily="@font/century_gothic"
+            android:textColor="@color/green"
+            android:textColorHint="@color/darkGrey"
+            android:background="@drawable/edittext"
+            />
+
+        <EditText
+            android:id="@+id/contacts"
+
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:gravity="center"
+
+            android:hint="@string/contacts"
+            android:fontFamily="@font/century_gothic"
+            android:textColor="@color/green"
+            android:textColorHint="@color/darkGrey"
+            android:background="@drawable/edittext"
+            android:inputType="textEmailAddress"
+            />
+
+        <EditText
+            android:id="@+id/phone"
+            android:inputType="phone"
+
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:gravity="center"
+
+            android:hint="@string/phone"
+            android:fontFamily="@font/century_gothic"
+            android:textColor="@color/green"
+            android:textColorHint="@color/darkGrey"
+            android:background="@drawable/edittext"
+            />
+
+        <Button
+            android:id="@+id/btnConfirm"
+            android:onClick="confirm"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+
+            android:background="@drawable/button_inverted"
+            android:fontFamily="@font/century_gothic"
+            android:textColor="@color/green" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

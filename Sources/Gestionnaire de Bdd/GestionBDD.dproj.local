@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2018/08/22 13:37:53.000.026,=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit2.pas</Transaction>
+    <Transaction>2018/08/22 13:38:58.000.056,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Project1.dproj=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Project1.dproj</Transaction>
+    <Transaction>2018/08/22 13:39:27.000.075,=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit1.pas</Transaction>
+    <Transaction>2018/08/22 13:42:06.000.711,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit2.pas=</Transaction>
+    <Transaction>2018/08/23 15:00:23.000.844,=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit3.pas</Transaction>
+    <Transaction>2018/08/23 15:00:42.000.260,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit1.pas=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Main.pas</Transaction>
+    <Transaction>2018/08/23 15:00:42.000.260,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit1.dfm=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Main.dfm</Transaction>
+    <Transaction>2018/08/23 15:02:08.000.188,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit3.dfm=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Createuser.dfm</Transaction>
+    <Transaction>2018/08/23 15:02:08.000.188,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit3.pas=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Createuser.pas</Transaction>
+    <Transaction>2018/08/23 16:06:29.000.225,=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit3.pas</Transaction>
+    <Transaction>2018/08/23 16:07:10.000.671,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit3.dfm=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Createproduct.dfm</Transaction>
+    <Transaction>2018/08/23 16:07:10.000.671,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit3.pas=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Createproduct.pas</Transaction>
+    <Transaction>2018/08/23 16:07:16.000.182,=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit4.pas</Transaction>
+    <Transaction>2018/08/23 16:07:41.000.312,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit4.dfm=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\DeleteUser.dfm</Transaction>
+    <Transaction>2018/08/23 16:07:41.000.312,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit4.pas=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\DeleteUser.pas</Transaction>
+    <Transaction>2018/08/23 16:07:46.000.819,=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit5.pas</Transaction>
+    <Transaction>2018/08/23 16:08:00.000.287,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit5.dfm=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\DeleteProduct.dfm</Transaction>
+    <Transaction>2018/08/23 16:08:00.000.287,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit5.pas=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\DeleteProduct.pas</Transaction>
+    <Transaction>2018/08/23 16:08:07.000.995,=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit6.pas</Transaction>
+    <Transaction>2018/08/23 16:08:18.000.871,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit6.dfm=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\UpdateUser.dfm</Transaction>
+    <Transaction>2018/08/23 16:08:18.000.871,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit6.pas=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\UpdateUser.pas</Transaction>
+    <Transaction>2018/08/23 16:08:23.000.358,=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit7.pas</Transaction>
+    <Transaction>2018/08/23 16:08:39.000.584,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit7.pas=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\UpdateProduct.pas</Transaction>
+    <Transaction>2018/08/23 16:08:39.000.584,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit7.dfm=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\UpdateProduct.dfm</Transaction>
+    <Transaction>2018/09/02 18:30:12.000.275,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\DeleteProduct.pas=</Transaction>
+    <Transaction>2018/09/02 18:30:18.000.762,=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit5.pas</Transaction>
+    <Transaction>2018/09/02 18:30:32.000.938,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit5.pas=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\DeleteProduct.pas</Transaction>
+    <Transaction>2018/09/02 18:30:32.000.938,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit5.dfm=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\DeleteProduct.dfm</Transaction>
+    <Transaction>2018/09/04 22:34:12.000.694,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\UpdateUser.pas=</Transaction>
+    <Transaction>2018/09/04 22:34:24.000.544,=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit5.pas</Transaction>
+    <Transaction>2018/09/04 22:36:01.000.146,=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit6.pas</Transaction>
+    <Transaction>2018/09/04 22:51:49.000.852,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit6.pas=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\UpdateUser.pas</Transaction>
+    <Transaction>2018/09/04 22:51:49.000.852,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit6.dfm=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\UpdateUser.dfm</Transaction>
+    <Transaction>2018/09/09 23:08:20.000.143,=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit6.pas</Transaction>
+    <Transaction>2018/09/09 23:08:48.000.300,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\UpdateUser.pas=</Transaction>
+    <Transaction>2018/09/09 23:08:54.000.170,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit5.pas=</Transaction>
+    <Transaction>2018/09/09 23:15:03.000.658,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\UpdateUser.pas=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit6.pas</Transaction>
+    <Transaction>2018/09/09 23:15:03.000.658,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\UpdateUser.dfm=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit6.dfm</Transaction>
+    <Transaction>2018/09/09 23:46:26.000.452,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\UpdateProduct.pas=</Transaction>
+    <Transaction>2018/09/09 23:46:35.000.381,=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit6.pas</Transaction>
+    <Transaction>2018/09/09 23:47:11.000.442,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\UpdateProduct.pas=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit6.pas</Transaction>
+    <Transaction>2018/09/09 23:47:11.000.442,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\UpdateProduct.dfm=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Unit6.dfm</Transaction>
+    <Transaction>2018/09/11 11:42:14.099,C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\GestionBDD.dproj=C:\Users\Alexandre\Documents\Embarcadero\Studio\Projets\Project1.dproj</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Main.pas"/>
+    <File Path="Main.dfm"/>
+    <File Path="Createuser.pas"/>
+    <File Path="Createuser.dfm"/>
+    <File Path="Createproduct.pas"/>
+    <File Path="Createproduct.dfm"/>
+    <File Path="DeleteUser.pas"/>
+    <File Path="DeleteUser.dfm"/>
+    <File Path="DeleteProduct.pas"/>
+    <File Path="DeleteProduct.dfm"/>
+    <File Path="UpdateUser.pas"/>
+    <File Path="UpdateUser.dfm"/>
+    <File Path="UpdateProduct.pas"/>
+    <File Path="UpdateProduct.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

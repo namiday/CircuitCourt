@@ -1,0 +1,192 @@
+﻿unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, IdAuthentication,
+  IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient, IdHTTP, Vcl.Grids,
+  Vcl.ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    ShowTable: TButton;
+    IdHTTP1: TIdHTTP;
+    Edit1: TEdit;
+    ComboBox1: TComboBox;
+    lbltitre: TLabel;
+    tableauDonnees: TStringGrid;
+    Label1: TLabel;
+    Panel1: TPanel;
+    procedure ShowTableClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    stringUsers, stringProducts : string;
+    Function splitdatatable(data:string):TStringList;
+    procedure AutoSizeCol(Grid: TStringGrid;Column: integer);
+    procedure ClearStringGrid(Grid: TStringGrid);
+    { Déclarations privées }
+  public
+    { Déclarations publiques }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+
+procedure TForm1.FormCreate(Sender: TObject);
+var
+  ListHeader : TStringList;
+  i: Integer;
+begin
+  ComboBox1.Items.Add('Users');
+  ComboBox1.Items.Add('Products');
+  stringUsers := '_id,mail,password,firstName,lastName,nickName,isSeller,shopName,shopCity,shopStreet,shopNum,shopPostalCode,shopkind,shopTags,contacts,shopLongitude,shopLatitude,__v';
+  stringProducts :='shopId,name,price,tags,type,__v';
+end;
+//------------------------------------------------------------------------------
+procedure TForm1.ShowTableClick(Sender: TObject);
+var
+  lHTTP: TIdHTTP;
+  ListHeader : tstringlist;
+  Result : string;
+  i : Integer;
+begin
+  ClearStringGrid(tableauDonnees);
+  ListHeader := TStringList.Create;
+  lHTTP := TIdHTTP.Create;
+  try
+    if ComboBox1.Text = 'Users' then
+    begin
+      // définition du header
+      ListHeader.CommaText := stringUsers;
+      for i := 0 to ListHeader.Count-1 do
+        tableauDonnees.Cols[i+1].Add(ListHeader[i]);
+      //récupération des données
+      Result := lHTTP.Get('http://ec2-34-247-50-129.eu-west-1.compute.amazonaws.com/getUsers');
+      splitdatatable(Result);
+    end
+    else if ComboBox1.Text = 'Products' then
+    begin
+      // définition du header
+      ListHeader.CommaText := stringProducts;
+      for i := 0 to ListHeader.Count-1 do
+        tableauDonnees.Cols[i+1].Add(ListHeader[i]);
+      //récupération des données
+       Result := lHTTP.Get('http://ec2-34-247-50-129.eu-west-1.compute.amazonaws.com/getProducts');
+       splitdatatable(Result);
+    end;
+      AutoSizeCol(tableauDonnees, 0);
+  finally
+
+    lHTTP.Free;
+    ListHeader.Free;
+  end;
+
+end;
+//------------------------------------------------------------------------------
+// Create
+
+// read
+//------------------------------------------------------------------------------
+Function TForm1.splitdatatable(data:string):TStringList;
+var
+  ListTemp,ListDecoupage:TStringList;
+  i,j,indice : Integer;
+  Lignedonnees,lignedecoupage,ligneInsert : string;
+begin
+  ListTemp := TStringList.Create;
+  ListDecoupage := TStringList.Create;
+  i := 1;
+  // découpage de la ligne réceptionnée
+  while data[i]<>']' do
+  begin
+    if data[i]='}' then
+    begin
+      Lignedonnees := Lignedonnees + data[i];
+      ListTemp.add(lignedonnees);
+      Lignedonnees := '';
+    end
+    else
+      Lignedonnees := Lignedonnees + data[i];
+    i := i+1;
+  end;
+
+  // découpage des données dans chaque ligne
+  for i := 0 to Listtemp.Count-1 do
+  begin
+    tableauDonnees.RowCount := ListTemp.Count;
+    // modification nécessiare pour l'exploitation des données
+    ListTemp[i] :=  stringreplace(ListTemp[i], '[{"_id":7627221,"', '',[rfReplaceAll, rfIgnoreCase]);
+    ListTemp[i] :=  stringreplace(ListTemp[i], ',"', '*',[rfReplaceAll, rfIgnoreCase]);
+    ListTemp[i] :=  stringreplace(ListTemp[i], ', ', '?',[rfReplaceAll, rfIgnoreCase]);
+    ListTemp[i] :=  stringreplace(ListTemp[i], ' ', '|',[rfReplaceAll, rfIgnoreCase]);
+
+//    ListDecoupage.NameValueSeparator := '*';
+    ListDecoupage.Delimiter := '*';
+    ListDecoupage.DelimitedText := ListTemp[i];
+    // ajout dans le tableau
+    for j := 0 to ListDecoupage.Count-1 do
+    begin
+      // modification de string
+      ListDecoupage[j] :=  stringreplace(ListDecoupage[j], '?', ', ',[rfReplaceAll, rfIgnoreCase]);
+      ListDecoupage[j] :=  stringreplace(ListDecoupage[j], '|', ' ',[rfReplaceAll, rfIgnoreCase]);
+
+      //
+      ligneinsert := copy(Listdecoupage[j],pos(':',Listdecoupage[j])+1,Length(Listdecoupage[j]));
+
+      // modification de string
+      ligneInsert := stringreplace(ligneinsert, '}', '',[rfReplaceAll, rfIgnoreCase]);
+      ligneInsert := stringreplace(ligneinsert, '"', '',[rfReplaceAll, rfIgnoreCase]);
+
+      // insertion dans le tableau
+      tableauDonnees.Cells[j+1,i+1] := ligneInsert;
+    end;
+
+  end;
+  // libération
+  ListDecoupage.Free;
+  ListTemp.Free;
+end;
+
+//------------------------------------------------------------------------------
+// update
+
+// delete
+//------------------------------------------------------------------------------
+procedure TForm1.AutoSizeCol(Grid: TStringGrid;Column: integer);
+var
+  i, W, WMax: integer;
+begin
+  WMax := 0;
+  for i := 0 to (Grid.RowCount - 1) do begin
+    W := Grid.Canvas.TextWidth(Grid.Cells[Column, i]);
+    if W > WMax then
+      WMax := W;
+  end;
+  Grid.ColWidths[Column] := WMax + 5;
+end;
+//------------------------------------------------------------------------------
+procedure TForm1.ClearStringGrid(Grid: TStringGrid);
+const
+  ColWidthMin = 10;
+var
+  C, R, W, ColWidthMax: integer;
+begin
+  for C := 0 to Grid.ColCount - 1 do begin
+    ColWidthMax := ColWidthMin;
+    for R := 0 to (Grid.RowCount - 1) do begin
+      W := Grid.Canvas.TextWidth(Grid.Cells[C, R]);
+      if W > ColWidthMax then
+        ColWidthMax := W;
+    end;
+    Grid.ColWidths[C] := ColWidthMax + 5;
+  end;
+end;
+
+
+end.

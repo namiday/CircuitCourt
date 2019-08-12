@@ -1,0 +1,55 @@
+unit UpdateUser;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,IDHTTP;
+
+type
+  TUpdateUserForm = class(TForm)
+  private
+    { Déclarations privées }
+  public
+    { Déclarations publiques }
+  end;
+
+var
+  UpdateUserForm: TUpdateUserForm;
+
+implementation
+
+{$R *.dfm}
+{$R *.dfm}
+procedure TUpdateUserForm.btnMajUserClick(Sender: TObject);
+var
+ lHTTP: TIdHTTP;
+ chaine,res : string;
+begin
+  lHTTP := TIdHTTP.Create;
+  try
+    chaine := 'http://ec2-34-247-50-129.eu-west-1.compute.amazonaws.com/updateUser/'+ EditID.Text + '/' + EditMail.Text +'/'+ editPassword.Text + '/' + editFirstName.Text + '/'
+    + EditLastName.Text + '/' + EditNickName.Text + '/' + EditShopName.Text + '/' + EditShopcity.Text + '/' + EditShopStreet.Text + '/' + EditIDShop.Text + '/' + EditPostalCode.Text + '/'
+    + EditshopKind.Text + '/' + editshopDescription.Text + '/' + EditContact.text + '/' + EditLongitude.Text + '/' + EditLatitude.Text;
+    res := lHTTP.Get(chaine);
+    ShowMessage(res);
+  finally
+    lHTTP.Free;
+  end;
+end;
+//------------------------------------------------------------------------------
+
+procedure TUpdateUserForm.FormCreate(Sender: TObject);
+begin
+PanelGauche.Width := Round((UpdateUserForm.Width/2)-10);
+PanelDroit.Width := Round((UpdateUserForm.Width/2)-10);
+end;
+
+procedure TUpdateUserForm.FormResize(Sender: TObject);
+begin
+ PanelGauche.Width := Round((UpdateUserForm.Width/2)-10);
+ PanelDroit.Width := Round((UpdateUserForm.Width/2)-10);
+end;
+
+
+end.

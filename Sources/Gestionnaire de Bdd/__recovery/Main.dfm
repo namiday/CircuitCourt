@@ -1,0 +1,106 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Gestionnaire de base de donn'#233'es'
+  ClientHeight = 441
+  ClientWidth = 824
+  Color = clBtnFace
+  Constraints.MaxHeight = 480
+  Constraints.MaxWidth = 840
+  Constraints.MinHeight = 480
+  Constraints.MinWidth = 840
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object lbltitre: TLabel
+    Left = 0
+    Top = 0
+    Width = 824
+    Height = 24
+    Align = alTop
+    Alignment = taCenter
+    Caption = 'Gestionnaire de base de donn'#233'es - Circuit Court'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -20
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    ExplicitWidth = 482
+  end
+  object ShowTable: TButton
+    Left = 388
+    Top = 120
+    Width = 75
+    Height = 25
+    Caption = 'Voir la table'
+    TabOrder = 0
+    OnClick = ShowTableClick
+  end
+  object tableauDonnees: TStringGrid
+    Left = 0
+    Top = 208
+    Width = 824
+    Height = 233
+    Align = alBottom
+    ColCount = 15
+    TabOrder = 1
+  end
+  object Panel1: TPanel
+    Left = 336
+    Top = 64
+    Width = 209
+    Height = 25
+    TabOrder = 2
+    object Label1: TLabel
+      Left = 1
+      Top = 1
+      Width = 33
+      Height = 23
+      Align = alLeft
+      Caption = 'Table :'
+      ExplicitHeight = 13
+    end
+    object ComboBox1: TComboBox
+      Left = 34
+      Top = 1
+      Width = 174
+      Height = 21
+      Align = alClient
+      TabOrder = 0
+    end
+  end
+  object btnAdd: TButton
+    Left = 112
+    Top = 167
+    Width = 75
+    Height = 25
+    Caption = 'Ajouter'
+    TabOrder = 3
+    OnClick = btnAddClick
+  end
+  object btnDelete: TButton
+    Left = 388
+    Top = 167
+    Width = 75
+    Height = 25
+    Caption = 'Supprimer'
+    TabOrder = 4
+    OnClick = btnDeleteClick
+  end
+  object btnModifier: TButton
+    Left = 648
+    Top = 167
+    Width = 75
+    Height = 25
+    Caption = 'Modifier'
+    TabOrder = 5
+    OnClick = btnModifierClick
+  end
+end

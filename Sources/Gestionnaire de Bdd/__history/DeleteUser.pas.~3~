@@ -1,0 +1,45 @@
+unit DeleteUser;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,IdHTTP, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TDeleteUserForm = class(TForm)
+    lblTitreDeleteUser: TLabel;
+    PanelBas: TPanel;
+    Button1: TButton;
+    PanelGauche: TPanel;
+    Panel6: TPanel;
+    lblchoixId: TLabel;
+    cbIdUser: TComboBox;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Déclarations privées }
+  public
+    { Déclarations publiques }
+  end;
+
+var
+  DeleteUserForm: TDeleteUserForm;
+
+implementation
+
+{$R *.dfm}
+
+procedure TDeleteUserForm.FormCreate(Sender: TObject);
+var
+  lhttp : TIdHTTP;
+  result : string;
+begin
+  lHTTP := TIdHTTP.Create;
+  try
+      Result := lHTTP.Get('http://ec2-34-247-50-129.eu-west-1.compute.amazonaws.com/getUsers');
+      splitdatatable(Result);
+    end
+end;
+
+procedure splitdatatable(data :string;
+end.

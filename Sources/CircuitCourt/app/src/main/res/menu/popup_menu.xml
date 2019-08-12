@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/manageShop"
+        android:title="@string/manageShop" />
+
+    <item android:id="@+id/createShop"
+        android:title="@string/createShop" />
+
+    <item android:id="@+id/manageProducts"
+        android:title="@string/manageProducts" />
+
+    <item android:id="@+id/editProfile"
+        android:title="@string/editProfile" />
+
+    <item android:id="@+id/logout"
+        android:title="@string/logout" />
+</menu>

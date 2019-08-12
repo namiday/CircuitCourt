@@ -1,0 +1,46 @@
+unit UpdateProduct;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TUpdateProductForm = class(TForm)
+    lblTitreCreateProduct: TLabel;
+    PanelBas: TPanel;
+    Button1: TButton;
+    PanelHaut: TPanel;
+    Panel5: TPanel;
+    Label4: TLabel;
+    EditType: TEdit;
+    Panel4: TPanel;
+    Label1: TLabel;
+    EditTags: TEdit;
+    Panel3: TPanel;
+    Label3: TLabel;
+    EditPrice: TEdit;
+    Panel2: TPanel;
+    Label5: TLabel;
+    editproductName: TEdit;
+    Panel1: TPanel;
+    Label6: TLabel;
+    EditIdShop: TEdit;
+    Panel6: TPanel;
+    lblIdentifiant: TLabel;
+    EditIdProduct: TEdit;
+  private
+    { Déclarations privées }
+  public
+    { Déclarations publiques }
+  end;
+
+var
+  UpdateProductForm: TUpdateProductForm;
+
+implementation
+
+{$R *.dfm}
+
+end.

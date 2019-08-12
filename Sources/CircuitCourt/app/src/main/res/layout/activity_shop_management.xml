@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/nomShopText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:text="Nom du magasin :"
+            android:fontFamily="@font/century_gothic" />
+
+        <EditText
+            android:id="@+id/saisieNomShop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/century_gothic" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/saisielocalisation"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="localiser mon magasin"
+            android:fontFamily="@font/century_gothic"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@android:color/white"
+            android:background="@android:color/holo_blue_dark"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/kindShopText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:text="Type d'activité:"
+            android:fontFamily="@font/century_gothic" />
+
+        <EditText
+            android:id="@+id/saisieTypeShop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/century_gothic" />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/TagShopText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:text="Présentation : "
+            android:fontFamily="@font/century_gothic"
+            />
+
+        <EditText
+            android:id="@+id/saisieTagShop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/century_gothic" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:text="Vos produits"
+            android:fontFamily="@font/century_gothic"
+            />
+
+        <Button
+            android:id="@+id/btnAjouterProduit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Ajouter un produit"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@android:color/white"
+            android:background="@android:color/holo_green_light"
+            android:fontFamily="@font/century_gothic"/>
+
+        <TextView
+            android:id="@+id/haveProductText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:text="Aucuns produits enregistrés"
+            android:visibility="gone"
+            android:fontFamily="@font/century_gothic"
+            />
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </ListView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnValiderShop"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Valider"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@android:color/white"
+            android:background="@android:color/holo_green_light"
+            android:fontFamily="@font/century_gothic"/>
+
+    </LinearLayout>
+</LinearLayout>
+</android.support.constraint.ConstraintLayout>

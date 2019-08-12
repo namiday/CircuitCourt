@@ -1,0 +1,30 @@
+program Project1;
+
+uses
+  Vcl.Forms,
+  Main in 'Main.pas' {Form1},
+  Createuser in 'Createuser.pas' {CreateUserForm},
+  Createproduct in 'Createproduct.pas' {Form3},
+  DeleteUser in 'DeleteUser.pas' {Form4},
+  UpdateProduct in 'UpdateProduct.pas' {Form7},
+  DeleteProduct in 'DeleteProduct.pas' {DeleteProductForm},
+  Unit5 in 'Unit5.pas' {Form5},
+  UpdateUser in 'UpdateUser.pas' {UpdateUserForm};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TCreateUserForm, CreateUserForm);
+  Application.CreateForm(TForm5, Form5);
+  Application.CreateForm(TUpdateUserForm, UpdateUserForm);
+  //  Application.CreateForm(TCreateProductForm, CreateProductForm);
+  Application.CreateForm(TDeleteProductForm, DeleteProductForm);
+  Application.CreateForm(TDeleteUserForm, DeleteUserForm);
+//  Application.CreateForm(TUpdateProductForm, UpdateProductForm);
+//  Application.CreateForm(TUpdateUserForm, UpdateUserForm);
+  Application.CreateForm(TDeleteProductForm, DeleteProductForm);
+  Application.Run;
+end.

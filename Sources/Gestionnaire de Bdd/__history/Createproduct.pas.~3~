@@ -1,0 +1,57 @@
+unit Createproduct;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
+  IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient, IdHTTP;
+
+type
+  TCreateProductForm = class(TForm)
+    Panel5: TPanel;
+    Label4: TLabel;
+    Panel4: TPanel;
+    Label1: TLabel;
+    Label3: TLabel;
+    Label5: TLabel;
+    Panel1: TPanel;
+    Label6: TLabel;
+    Button1: TButton;
+    EditIdShop : TEdit;
+    EditPrice : TEdit;
+    EditTags : TEdit;
+    EditType : TEdit;
+    editProductName : Tedit;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Déclarations privées }
+  public
+    { Déclarations publiques }
+  end;
+
+var
+  CreateProductForm: TCreateProductForm;
+
+implementation
+
+{$R *.dfm}
+
+procedure TCreateProductForm.Button1Click(Sender: TObject);
+var
+ numShop : Integer;
+ lHTTP: TIdHTTP;
+ chaine,res : string;
+begin
+  lHTTP := TIdHTTP.Create;
+  try
+    numShop := Random(1000000);
+    chaine := 'http://ec2-34-247-50-129.eu-west-1.compute.amazonaws.com/createUser/'+ EditIdShop.Text +'/'+
+     editproductName.Text + '/' + EditPrice.Text + '/' + EditTags.Text + '/' + EditType.Text;
+    res := lHTTP.Get(chaine);
+    ShowMessage(res);
+  finally
+    lHTTP.Free;
+  end;
+end;
+end.

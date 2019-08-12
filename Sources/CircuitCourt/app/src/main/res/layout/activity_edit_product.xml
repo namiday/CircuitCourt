@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightGrey"
+    tools:context=".EditShop">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textColor="@color/green"
+            android:textStyle="bold"
+            android:text="@string/newProduct"
+            android:fontFamily="@font/century_gothic" />
+
+        <EditText
+            android:id="@+id/name"
+
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:gravity="center"
+
+            android:fontFamily="@font/century_gothic"
+            android:hint="@string/name"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/green"
+            android:textColorHint="@color/darkGrey"
+            android:background="@drawable/edittext"
+            />
+
+        <EditText
+            android:id="@+id/price"
+            android:inputType="numberDecimal"
+
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:gravity="center"
+
+            android:hint="@string/price"
+            android:fontFamily="@font/century_gothic"
+            android:textColor="@color/green"
+            android:textColorHint="@color/darkGrey"
+            android:background="@drawable/edittext"
+            />
+
+        <RadioGroup
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <RadioButton
+                android:id="@+id/legume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:checked="true"
+                android:tag="legume"
+
+                android:fontFamily="@font/century_gothic"
+                android:text="@string/legume"
+                android:textColor="@color/green"
+                android:button="@drawable/checkbox"
+                android:padding="3dp"/>
+
+            <RadioButton
+                android:id="@+id/fruit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:tag="fruit"
+
+                android:fontFamily="@font/century_gothic"
+                android:gravity="center"
+                android:text="@string/fruit"
+                android:textColor="@color/green"
+                android:button="@drawable/checkbox"
+                android:padding="3dp"/>
+
+            <RadioButton
+                android:id="@+id/viande"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:tag="viande"
+
+                android:fontFamily="@font/century_gothic"
+                android:gravity="center"
+                android:text="@string/viande"
+                android:textColor="@color/green"
+                android:button="@drawable/checkbox"
+                android:padding="3dp"/>
+
+            <RadioButton
+                android:id="@+id/autre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:tag="autre"
+
+                android:fontFamily="@font/century_gothic"
+                android:gravity="center"
+                android:text="@string/autre"
+                android:textColor="@color/green"
+                android:button="@drawable/checkbox"
+                android:padding="3dp"/>
+
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/tags"
+            android:visibility="gone"
+            android:text=" "
+
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:gravity="center"
+
+            android:hint="@string/tags"
+            android:fontFamily="@font/century_gothic"
+            android:textColor="@color/green"
+            android:textColorHint="@color/darkGrey"
+            android:background="@drawable/edittext"
+            />
+
+        <Button
+            android:id="@+id/btnConfirm"
+            android:onClick="confirm"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+
+            android:background="@drawable/button_inverted"
+            android:fontFamily="@font/century_gothic"
+            android:textColor="@color/green"
+            android:text="@string/add"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
